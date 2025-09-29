@@ -1,0 +1,37 @@
+.grid__card {
+  width: 384px;
+  height: 174px;
+  border: 1px solid $color-card-border;
+  background: #fff;
+  border-radius: 16px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  min-width: 0;
+
+  /* Modifiers */
+  &--tablet {
+    height: 95px;
+    border-radius: 10px;
+  }
+
+  &--mobile {
+    height: 50px;
+    border-radius: 5px;
+  }
+}
+
+/* Responsive overrides */
+@media (max-width: $bp-tablet) {
+  .grid__card {
+    height: 95px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .grid__card {
+    height: 50px;
+    border-radius: 5px;
+  }
+}

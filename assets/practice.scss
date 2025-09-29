@@ -1,0 +1,66 @@
+body {
+  background-color: black;
+}
+
+.grid {
+  border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+  padding: 96px 0;
+  align-items: center;
+
+  &__container {
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: column;
+    max-width: 1280px;
+    padding: 0 32px;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  &__row {
+    border: 2px solid red;
+    display: flex;
+    justify-content: center; /*Even if the padding left and right on .container changes, the row will remain centered. */
+    gap: 32px;
+    min-width: 0;
+  }
+
+  &__card {
+    width: 384px;
+    height: 174px;
+    border: 1px solid #eaecf0;
+    background: #fff;
+    border-radius: 16px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    min-width: 0;
+  }
+}
+
+/* 
+width: 384px, height: 174px.
+aspect ratio: width : height = 2.20 : 1
+At 768px width, each card has a width of 210 px, and to maintain the aspect-ratio, each card 
+should have a heigh of 210 : 2.2 = 96px. The height should be 96 px.
+ */
+
+/* Tablets (portrait and landscape) */
+@media (max-width: 990px) {
+  /* tablet styles here */
+  .grid__card {
+    height: 95px;
+    border-radius: 10px;
+  }
+}
+
+/* Extra small mobiles (like older iPhones, 320px wide) */
+@media (max-width: 479px) {
+  .grid__card {
+    height: 50px;
+    border-radius: 5px;
+  }
+}
